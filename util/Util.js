@@ -18,6 +18,10 @@ module.exports = class Util {
 		return arr;
 	}
 
+	static shorten(text, maxLen = 2000) {
+		return text.length > maxLen ? `${text.substr(0, maxLen - 3)}...` : text;
+	}
+
 	static formatNumber(number) {
 		return Number.parseFloat(number).toLocaleString(undefined, { maximumFractionDigits: 2 });
 	}
