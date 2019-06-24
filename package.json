@@ -1,0 +1,55 @@
+{
+	"name": "storyteller",
+	"version": "1.0.0",
+	"description": "Mafia for Discord.",
+	"main": "Storyteller.js",
+	"scripts": {
+		"test": "npm run lint",
+		"lint": "eslint . --ext .js --ext .json",
+		"start": "node Storyteller.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/dragonfire535/storyteller.git"
+	},
+	"keywords": [
+		"bot",
+		"commando",
+		"discord",
+		"discord-api",
+		"discord-bot",
+		"discord-hack-week",
+		"discord-js",
+		"discord-js-commando"
+	],
+	"author": "dragonfire535 <danielbodendahl@gmail.com>",
+	"license": "GPL-3.0",
+	"bugs": {
+		"url": "https://github.com/dragonfire535/storyteller/issues"
+	},
+	"homepage": "https://github.com/dragonfire535/storyteller#readme",
+	"engines": {
+		"node": ">=12"
+	},
+	"dependencies": {
+		"common-tags": "^1.8.0",
+		"discord.js": "github:discordjs/discord.js",
+		"discord.js-commando": "github:discordjs/Commando",
+		"dotenv": "^8.0.0",
+		"moment": "^2.24.0",
+		"moment-duration-format": "^2.3.2",
+		"node-superfetch": "^0.1.9",
+		"winston": "^3.2.1"
+	},
+	"devDependencies": {
+		"eslint": "^6.0.0",
+		"eslint-config-amber": "^2.0.0",
+		"eslint-plugin-json": "^1.4.0"
+	},
+	"eslintConfig": {
+		"extends": "amber",
+		"plugins": [
+			"json"
+		]
+	}
+}
