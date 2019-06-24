@@ -28,7 +28,7 @@ client.registry
 
 client.on('ready', () => {
 	client.logger.info(`[READY] Logged in as ${client.user.tag}! ID: ${client.user.id}`);
-	client.setInterval(() => client.user.setActivity(''), 60000);
+	client.setInterval(() => client.user.setActivity('Mafia'), 60000);
 });
 
 client.on('disconnect', event => {
