@@ -42,7 +42,7 @@
 		"winston": "^3.2.1"
 	},
 	"devDependencies": {
-		"eslint": "^6.0.0",
+		"eslint": "^5.16.0",
 		"eslint-config-amber": "^2.0.0",
 		"eslint-plugin-json": "^1.4.0"
 	},
