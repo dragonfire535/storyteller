@@ -14,6 +14,36 @@ the classic circle game Mafia, using a voice channel for the players
 to interact alongside a fully-voiced storyteller, creating one of the
 most immersive Discord bot games in existence.
 
+## Installing
+
+### Before You Begin
+
+1. Make sure you have installed [Node.js](https://nodejs.org/en/) >=10 and [Git](https://git-scm.com/).
+2. Clone this repository with `git clone https://github.com/dragonfire535/storyteller.git`.
+3. Run `cd storyteller` to move into the folder that you just created.
+
+### Windows
+
+1. Open an **ADMIN POWERSHELL** window and run `npm i -g --production windows-build-tools`.
+2. Run `npm i --production` in the folder you cloned the bot.
+3. Run `npm i -g pm2` to install PM2.
+4. Run `pm2 start Storyteller.js --name mafia` to run the bot.
+
+### Mac
+
+1. Use a real (cheaper!) OS to host your bot.
+2. ???
+3. Profit.
+
+### Ubuntu and other Debian-based systems
+
+1. Run `apt update`.
+2. Run `apt upgrade` to install the latest dependencies of your distro.
+3. Run `apt install ffmpeg` to install ffmpeg.
+4. Run `npm i --production` in the folder you cloned the bot.
+5. Run `npm i -g pm2` to install PM2.
+6. Run `pm2 start Storyteller.js --name mafia` to run the bot.
+
 ## Licensing
 
 The bot is licensed under the GPL 3.0 license. See the file `LICENSE` for more
