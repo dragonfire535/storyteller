@@ -63,7 +63,7 @@ module.exports = class Game {
 	}
 
 	end() {
-		this.voiceChannel.leave();
+		if (this.voiceChannel) this.voiceChannel.leave();
 		this.client.games.delete(this.channel.id);
 		return this;
 	}
