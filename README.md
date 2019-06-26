@@ -25,9 +25,10 @@ most immersive Discord bot games in existence.
 ### Windows
 
 1. Open an **ADMIN POWERSHELL** window and run `npm i -g --production windows-build-tools`.
-2. Run `npm i --production` in the folder you cloned the bot.
-3. Run `npm i -g pm2` to install PM2.
-4. Run `pm2 start Storyteller.js --name mafia` to run the bot.
+2. [Follow these instructions to install ffmpeg](https://www.wikihow.com/Install-FFmpeg-on-Windows).
+3. Run `npm i --production` in the folder you cloned the bot.
+4. Run `npm i -g pm2` to install PM2.
+5. Run `pm2 start Storyteller.js --name mafia` to run the bot.
 
 ### Mac
 
