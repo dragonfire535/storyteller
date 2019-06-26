@@ -1,4 +1,5 @@
 const { CommandoClient } = require('discord.js-commando');
+const { Collection } = require('discord.js');
 const winston = require('winston');
 
 module.exports = class StorytellerClient extends CommandoClient {
@@ -12,6 +13,6 @@ module.exports = class StorytellerClient extends CommandoClient {
 				winston.format.printf(log => `[${log.timestamp}] [${log.level.toUpperCase()}]: ${log.message}`)
 			)
 		});
-		this.games = new Map();
+		this.games = new Collection();
 	}
 };
