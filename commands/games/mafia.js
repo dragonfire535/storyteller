@@ -20,7 +20,7 @@ module.exports = class MafiaCommand extends Command {
 		if (current) return msg.reply('Please wait until the current game is finished.');
 		const voiceChannel = msg.member.voice.channel;
 		if (!voiceChannel) return msg.reply('You must be in a voice channel to start a game.');
-		const game = new Game(msg.channel, voiceChannel);
+		const game = new Game(this.client, msg.channel, voiceChannel);
 		this.client.games.set(msg.channel.id, game);
 		try {
 			await game.init();
