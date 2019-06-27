@@ -18,7 +18,7 @@ module.exports = class Game {
 
 	determineRoles(playerCount) {
 		const roles = ['detective', 'mafia', 'mafia'];
-		for (let i = 0; i < ((playerCount - roles.length) + 2); i++) roles.push('innocent');
+		for (let i = 0; i < (playerCount - 3); i++) roles.push('innocent');
 		return shuffle(roles);
 	}
 
@@ -83,7 +83,7 @@ module.exports = class Game {
 		};
 		const votes = await this.channel.awaitMessages(filter, {
 			max: this.players.size,
-			time: 120000
+			time: 90000
 		});
 		if (!votes.size) return null;
 		return votes;

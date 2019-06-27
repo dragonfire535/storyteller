@@ -20,12 +20,14 @@ module.exports = class MafiaCommand extends Command {
 		if (current) return msg.reply('Please wait until the current game is finished.');
 		const voiceChannel = msg.member.voice.channel;
 		if (!voiceChannel) return msg.reply('You must be in a voice channel to start a game.');
+		for (const member of voiceChannel.members.values()) await msg.guild.members.fetch(member.id);
+		if (voiceChannel.members.size > 15) return msg.reply('Please keep the player count at a maximum of 15.');
 		const game = new Game(this.client, msg.channel, voiceChannel);
 		this.client.games.set(msg.channel.id, game);
 		try {
 			await game.init();
-			for (const member of voiceChannel.members.values()) await msg.guild.members.fetch(member.id);
 			await game.generate(voiceChannel.members.filter(m => !m.user.bot).map(m => m.user));
+			await game.playAudio('init');
 			await game.playAudio('rule-ask');
 			await msg.say('Type `yes` to hear a rule explanation.');
 			const rules = await verify(msg.channel, msg.author);
@@ -68,8 +70,8 @@ module.exports = class MafiaCommand extends Command {
 				++game.turn;
 			}
 			const mafia = game.players.find(p => p.role === 'mafia');
-			if (mafia) await game.playAudio('mafia-loses');
-			else await game.playAudio('mafia-wins');
+			if (mafia) await game.playAudio('mafia-wins');
+			else await game.playAudio('mafia-loses');
 			await game.playAudio('credits');
 			game.end();
 			return null;
