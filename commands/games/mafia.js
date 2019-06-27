@@ -1,7 +1,7 @@
 const Command = require('../../structures/Command');
 const Game = require('../../structures/mafia/Game');
 const { verify } = require('../../util/Util');
-const stories = require('../../assets/json/mafia');
+const stories = require('../../assets/json/stories');
 
 module.exports = class MafiaCommand extends Command {
 	constructor(client) {
