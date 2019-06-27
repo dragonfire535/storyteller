@@ -78,7 +78,7 @@ module.exports = class Game {
 			if (voted.includes(res.author.id)) return false;
 			if (!playersArr[Number.parseInt(res.content, 10) - 1]) return false;
 			voted.push(res.author.id);
-			res.react(SUCCESS_EMOJI_ID).catch(() => null);
+			res.react(SUCCESS_EMOJI_ID || '✅').catch(() => null);
 			return true;
 		};
 		const votes = await this.channel.awaitMessages(filter, {
