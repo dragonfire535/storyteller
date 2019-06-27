@@ -61,7 +61,7 @@ module.exports = class MafiaCommand extends Command {
 				}
 				const hanged = game.getHanged(votes, playersArr);
 				await game.playAudio('hanged');
-				await msg.say(`Hanged: **${hanged}**`);
+				await msg.say(`Hanged: **${hanged.user}**`);
 				game.players.delete(hanged.id);
 				++game.turn;
 			}
