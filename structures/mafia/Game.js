@@ -83,7 +83,7 @@ module.exports = class Game {
 		};
 		const votes = await this.channel.awaitMessages(filter, {
 			max: this.players.size,
-			time: 300000
+			time: 120000
 		});
 		if (!votes.size) return null;
 		return votes;
