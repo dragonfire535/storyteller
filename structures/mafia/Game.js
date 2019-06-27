@@ -3,7 +3,6 @@ const path = require('path');
 const { stripIndents } = require('common-tags');
 const Player = require('./Player');
 const { shuffle } = require('../../util/Util');
-const { SUCCESS_EMOJI_ID } = process.env;
 
 module.exports = class Game {
 	constructor(client, channel, voiceChannel) {
@@ -16,26 +15,9 @@ module.exports = class Game {
 		this.turn = 1;
 	}
 
-	async awaitPlayers(msg, max, min) {
-		const joined = [];
-		joined.push(msg.author.id);
-		const filter = res => {
-			if (res.author.bot) return false;
-			if (joined.includes(res.author.id)) return false;
-			if (res.content.toLowerCase() !== 'join game') return false;
-			joined.push(res.author.id);
-			res.react(SUCCESS_EMOJI_ID || '✅').catch(() => null);
-			return true;
-		};
-		const verify = await msg.channel.awaitMessages(filter, { max, time: 30000 });
-		verify.set(msg.id, msg);
-		if (verify.size < min) return false;
-		return verify.map(message => message.author);
-	}
-
 	determineRoles(playerCount) {
 		const roles = ['detective', 'mafia', 'mafia'];
-		for (let i = 0; i < (playerCount - roles.length - 1); i++) roles.push('innocent');
+		for (let i = 0; i < (playerCount - roles.length); i++) roles.push('innocent');
 		return shuffle(roles);
 	}
 
