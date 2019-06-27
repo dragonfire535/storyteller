@@ -3,6 +3,7 @@ const path = require('path');
 const { stripIndents } = require('common-tags');
 const Player = require('./Player');
 const { shuffle } = require('../../util/Util');
+const { SUCCESS_EMOJI_ID } = process.env;
 
 module.exports = class Game {
 	constructor(client, channel, voiceChannel) {
@@ -77,6 +78,7 @@ module.exports = class Game {
 			if (voted.includes(res.author.id)) return false;
 			if (!playersArr[Number.parseInt(res.content, 10) - 1]) return false;
 			voted.push(res.author.id);
+			res.react(SUCCESS_EMOJI_ID).catch(() => null);
 			return true;
 		};
 		const votes = await this.channel.awaitMessages(filter, {
