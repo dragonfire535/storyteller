@@ -1,7 +1,7 @@
 const Command = require('../../structures/Command');
 const Game = require('../../structures/mafia/Game');
 const { verify } = require('../../util/Util');
-const stories = require('../../assets/json/stories');
+const storyCount = 21;
 
 module.exports = class MafiaCommand extends Command {
 	constructor(client) {
@@ -49,7 +49,8 @@ module.exports = class MafiaCommand extends Command {
 				}
 				await game.playAudio(`day-${game.turn}`);
 				if (killed) {
-					await game.playAudio(stories[Math.floor(Math.random() * stories.length)]);
+					const story = Math.floor(Math.random() * storyCount) + 1;
+					await game.playAudio(`story-${story}`);
 					await game.playAudio('reveal-deceased');
 					await msg.say(`Deceased: **${killed}**`);
 					game.players.delete(killed.id);
