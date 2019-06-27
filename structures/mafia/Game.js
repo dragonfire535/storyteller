@@ -17,7 +17,7 @@ module.exports = class Game {
 
 	determineRoles(playerCount) {
 		const roles = ['detective', 'mafia', 'mafia'];
-		for (let i = 0; i < ((playerCount - roles.length) + 1); i++) roles.push('innocent');
+		for (let i = 0; i < ((playerCount - roles.length) + 2); i++) roles.push('innocent');
 		return shuffle(roles);
 	}
 
