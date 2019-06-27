@@ -48,7 +48,7 @@ module.exports = class MafiaCommand extends Command {
 					await game.playAudio(stories[Math.floor(Math.random() * stories.length)]);
 					await game.playAudio('reveal-deceased');
 					await msg.say(`Deceased: **${killed}**`);
-					game.players.remove(killed.id);
+					game.players.delete(killed.id);
 				} else {
 					await game.playAudio('no-deceased');
 				}

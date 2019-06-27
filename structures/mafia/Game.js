@@ -17,7 +17,7 @@ module.exports = class Game {
 
 	determineRoles(playerCount) {
 		const roles = ['detective', 'mafia', 'mafia'];
-		for (let i = 0; i < (playerCount - roles.length); i++) roles.push('innocent');
+		for (let i = 0; i < ((playerCount - roles.length) + 1); i++) roles.push('innocent');
 		return shuffle(roles);
 	}
 
@@ -51,7 +51,9 @@ module.exports = class Game {
 	}
 
 	playAudio(id) {
-		this.dispatcher = this.connection.play(path.join(__dirname, '..', '..', 'assets', 'sounds', `${id}.mp3`));
+		this.dispatcher = this.connection.play(path.join(__dirname, '..', '..', 'assets', 'sounds', `${id}.mp3`), {
+			volume: 2
+		});
 		return new Promise((res, rej) => {
 			this.dispatcher.once('finish', () => {
 				this.dispatcher = null;
