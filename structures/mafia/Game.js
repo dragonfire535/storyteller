@@ -103,7 +103,7 @@ module.exports = class Game {
 	}
 
 	get shouldEnd() {
-		return this.players.size > 2 && this.players.some(p => p.role === 'mafia');
+		return this.players.size < 4 && !this.players.some(p => p.role === 'mafia');
 	}
 
 	get voiceChannel() {

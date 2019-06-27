@@ -25,8 +25,9 @@ module.exports = class MafiaCommand extends Command {
 		try {
 			await game.init();
 			for (const member of voiceChannel.members.values()) await msg.guild.members.fetch(member.id);
-			await game.generate(voiceChannel.members.map(m => m.user));
+			await game.generate(voiceChannel.members.filter(m => !m.user.bot).map(m => m.user));
 			await game.playAudio('rule-ask');
+			await msg.say('Type `yes` to hear a rule explanation.');
 			const rules = await verify(msg.channel, msg.author);
 			if (rules) await game.playAudio('rules');
 			while (!game.shouldEnd) {
