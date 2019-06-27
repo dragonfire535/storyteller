@@ -39,10 +39,12 @@ module.exports = class MafiaCommand extends Command {
 				const randomizer = choices.filter(c => c !== null);
 				if (randomizer.length) killed = game.players.get(randomizer[Math.floor(Math.random() * randomizer.length)]);
 				await game.playAudio('mafia-decision-made');
-				await game.playAudio('detective');
 				const detective = game.players.find(p => p.role === 'detective');
-				await detective.dmRound();
-				await game.playAudio('detective-decision-made');
+				if (detective) {
+					await game.playAudio('detective');
+					await detective.dmRound();
+					await game.playAudio('detective-decision-made');
+				}
 				await game.playAudio(`day-${game.turn}`);
 				if (killed) {
 					await game.playAudio(stories[Math.floor(Math.random() * stories.length)]);
