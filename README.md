@@ -14,6 +14,19 @@ the classic circle game Mafia, using a voice channel for the players
 to interact alongside a fully-voiced storyteller, creating one of the
 most immersive Discord bot games in existence.
 
+## Why Mafia?
+
+Mafia was chosen as it utilizes in its gameplay most of the core
+features of Discord. I assumed Discord would want a bot that would
+show off what makes Discord, Discord. With Mafia, everything from
+voice channels and reactions to direct messages are fully utilized,
+making it highly capable for advertising campaigns and events.
+Additionally, Mafia is just a fun game in general, and encourages
+those users who refuse to use voice channels to join in on the fun,
+even if they choose not to talk. I wanted something unique and
+innovative, and I think Mafia is the perfect answer to what Discord
+is looking for with Hack Week.
+
 ## Installing
 
 ### Before You Begin
