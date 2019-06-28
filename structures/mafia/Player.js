@@ -33,7 +33,8 @@ module.exports = class Player {
 		}
 		const choice = valid[Number.parseInt(decision.first().content, 10) - 1].id;
 		if (this.role === 'detective') {
-			await this.user.send(this.game.players.get(choice).role === 'mafia' ? 'Yes.' : 'No.');
+			const isMafia = this.game.players.get(choice).role === 'mafia';
+			await this.user.send(isMafia ? 'Yes, they are a Mafioso.' : 'No, they are not a Mafioso.');
 		} else {
 			await this.user.send(`**${this.game.players.get(choice).user.tag}** is your choice...`);
 		}
