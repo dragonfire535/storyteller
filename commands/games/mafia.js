@@ -21,7 +21,8 @@ module.exports = class MafiaCommand extends Command {
 		const voiceChannel = msg.member.voice.channel;
 		if (!voiceChannel) return msg.reply('You must be in a voice channel to start a game.');
 		for (const member of voiceChannel.members.values()) await msg.guild.members.fetch(member.id);
-		if (voiceChannel.members.size > 15) return msg.reply('Please keep the player count at a maximum of 15.');
+		if (voiceChannel.members.size > 15) return msg.reply('Please do not have more than 15 players.');
+		if (voiceChannel.members.size < 6) return msg.reply('Please have at least 5 players before starting.');
 		const game = new Game(this.client, msg.channel, voiceChannel);
 		this.client.games.set(msg.channel.id, game);
 		try {
