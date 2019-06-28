@@ -14,7 +14,7 @@ client.registry
 	.registerDefaultTypes()
 	.registerGroups([
 		['util', 'Utility'],
-		['games', 'Games'],
+		['mafia', 'Mafia'],
 		['other', 'Other']
 	])
 	.registerDefaultCommands({

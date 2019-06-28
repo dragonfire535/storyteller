@@ -5,7 +5,7 @@ module.exports = class MeCommand extends Command {
 		super(client, {
 			name: 'me',
 			aliases: ['role'],
-			group: 'other',
+			group: 'mafia',
 			memberName: 'me',
 			description: 'Displays your current role in the game.'
 		});

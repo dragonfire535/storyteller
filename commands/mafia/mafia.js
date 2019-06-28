@@ -8,7 +8,7 @@ module.exports = class MafiaCommand extends Command {
 		super(client, {
 			name: 'mafia',
 			aliases: ['start', 'play', 'begin'],
-			group: 'games',
+			group: 'mafia',
 			memberName: 'mafia',
 			description: 'Who is the Mafia? Who is the detective? Will the Mafia kill them all?',
 			guildOnly: true
