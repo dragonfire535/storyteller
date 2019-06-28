@@ -45,6 +45,12 @@ most immersive Discord bot games in existence.
 5. Run `npm i -g pm2` to install PM2.
 6. Run `pm2 start Storyteller.js --name mafia` to run the bot.
 
+## How to Play
+
+1. Have all the players who want to play join a voice channel. You need at least 5 to play, and can have up to 15.
+2. Use the `mafia` command, which will start a game using the members of the voice channel. Make sure all players open their DMs.
+3. Have fun! The storyteller will guide you through the game.
+
 ## Licensing
 
 The bot is licensed under the GPL 3.0 license. See the file `LICENSE` for more
